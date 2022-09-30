@@ -88,7 +88,7 @@ app.get('/getattendance/:id',(req,res)=>{
     const id = req.params.id
     Student.findById(id)
     .then((data)=>{
-        res.send({present:data.present,absent:data.absent})
+        res.send(data)
         console.log(data)
     })
     .catch(err=>res.status(500).json({ success: false, msg: `Something went wrong. ${err}` }))
